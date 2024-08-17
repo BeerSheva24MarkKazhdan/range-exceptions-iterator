@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 
 public class BrokenFloorTest {
 
-private int getMinimalBrokenFloor(BallBrokenFloor bbf){
+private int getMinimalBrokenFloor(BallBrokenFloor bbf) {
 int startFloor = 0;
-int endFloor = bbf.getMaxBuildingFloor();
+int endFloor = Integer.MAX_VALUE;
 while (startFloor < endFloor){
     int mid = startFloor + (endFloor - startFloor) / 2;
     try {
@@ -20,8 +20,9 @@ while (startFloor < endFloor){
 }
 return startFloor;
 }
+
 @Test
-void minimalBrokenFloorTest(){
+void minimalBrokenFloorTest() {
 int[] floors = {200, 17, 1001, 2000};
 for (int i = 0; i < floors.length; i++){
 BallBrokenFloor bbf = new BallBrokenFloor(floors[i]);

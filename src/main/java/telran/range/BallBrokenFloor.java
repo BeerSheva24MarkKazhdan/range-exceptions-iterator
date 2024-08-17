@@ -21,8 +21,5 @@ public class BallBrokenFloor {
         //used only for testing purposes
         return minBrokenFloor;
     }
-    public int getMaxBuildingFloor(){
-        return nFloors;
-    }
 }
 
