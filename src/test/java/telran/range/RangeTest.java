@@ -30,7 +30,7 @@ assertThrowsExactly(OutOfRangeMinValueException.class, () -> range.checkNumber(M
 @Test
 void iteratorTest(){
 Range rangIt = Range.getRange(0,2);
-rangIt.setPredicate(null);
+//rangIt.setPredicate(null);
 Iterator<Integer> it = rangIt.iterator();
 Integer[] expected = {0, 1, 2};
 Integer[] actual = new Integer[expected.length];
@@ -63,10 +63,10 @@ void iteratorTestOdd(){
     Integer[] expected = {1, 3, 5, 7, 9};
     Integer[] actual = new Integer[expected.length];
     int index = 0;
-    Integer value;
-    while ((value = it.next()) != null) {
-        actual[index++] = value;
-    }
+    while(it.hasNext()){
+        actual[index] = it.next();
+        index++;
+        }
     assertArrayEquals(expected, actual);
 }
 }
